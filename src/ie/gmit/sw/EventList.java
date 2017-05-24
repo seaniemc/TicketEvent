@@ -7,6 +7,8 @@ import java.util.List;
  * Created by Sean on 24/05/2017.
  */
 public class EventList {
+
+
     //@SuppressWarnings("rawtypes")
     private List<Event> list  = new ArrayList<Event>();
 
@@ -40,4 +42,7 @@ public class EventList {
         return list.size();
     }
 
+   public Object[] toArray() {
+        return list.toArray();
+   }
 }

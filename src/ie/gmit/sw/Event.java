@@ -1,5 +1,7 @@
 package ie.gmit.sw;
 
+import java.util.Arrays;
+
 /**
  * Created by Sean on 20/05/2017.
  */
@@ -58,5 +60,16 @@ public class Event {
 
     public void setTickets(double[] tickets) {
         this.tickets = tickets;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", x=" + x +
+                ", y=" + y +
+                ", distance=" + distance +
+                ", tickets=" + Arrays.toString(tickets) +
+                '}';
     }
 }
