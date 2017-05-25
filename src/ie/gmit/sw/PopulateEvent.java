@@ -32,7 +32,7 @@ public class PopulateEvent  {
         for (int i = 0; i < 20; i ++){
             x = rand.nextInt(20) + 0;
             y = rand.nextInt(20) + 0;
-            id = rand.nextInt(20) + 0; //randValue = min + (max - min) * rand.nextInt();
+            id = rand.nextInt((1000 - 100) + 1) + 100;//randValue = min + (max - min) * rand.nextInt();
             tickets = fillTickets();
             event = new Event(id, x, y,dist, tickets);
             list.add(event);
@@ -41,6 +41,7 @@ public class PopulateEvent  {
         System.out.println(Arrays.toString(list.toArray()));
     }
 
+    //Method returns an array of random double numbers.
     public double[] fillTickets(){
         double [] tickets = new double[20];
         double min = 5.0;
