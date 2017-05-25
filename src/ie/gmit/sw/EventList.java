@@ -25,7 +25,7 @@ public class EventList {
         return list.contains(arg0);
     }
 
-    public Event getMyClass(int index) {
+    public Event getEvent(int index) {
 
         return list.get(index);
     }

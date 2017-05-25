@@ -10,13 +10,13 @@ public class Event {
     private int id;
     private int x;
     private int y;
-    private double distance;
+    private int distance;
     private ArrayList<Double> list;
 
     public Event(){
 
     }
-    public Event(int id, int x, int y, double distance, ArrayList<Double> list ){
+    public Event(int id, int x, int y, int distance, ArrayList<Double> list ){
         this.id = id;
         this.x = x;
         this.y = y;
@@ -47,11 +47,11 @@ public class Event {
         this.y = y;
     }
 
-    public double getDistane() {
+    public int getDistane() {
         return distance;
     }
 
-    public void setDistane(double distane) {
+    public void setDistane(int distane) {
         this.distance = distane;
     }
 

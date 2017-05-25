@@ -7,10 +7,14 @@ public class EventRunner {
 
 
     public static void main(String[] args) {
-
+        EventList eventList = new EventList();
         PopulateEvent event = new PopulateEvent();
 
-        event.RandomEvent();
+        eventList = event.RandomEvent();
+
+        Organiser org = new Organiser(eventList,6, 5);
+
+        
     }
 
 }

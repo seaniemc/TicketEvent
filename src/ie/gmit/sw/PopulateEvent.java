@@ -14,30 +14,34 @@ public class PopulateEvent implements Randomizeable {
     private Event event;
     ArrayList<Double> ticketList = new ArrayList<Double>();
     private EventList list;
-    
+
     public PopulateEvent(){
         super();
     }
 
     //Generate random seed data for 20 event
     @Override
-    public void RandomEvent(){
+    public EventList RandomEvent(){
         list = new EventList();
         int id, x, y;
         id = x = y = 0;
-
-        double dist = 0.0;
+        int dist = 0;
 
         for (int i = 0; i < 20; i ++){
+
             x = rand.nextInt(20) + 0;
             y = rand.nextInt(20) + 0;
-            id = rand.nextInt((100000 - 1000) + 1) + 1000;//randValue = min + (max - min) * rand.nextInt();
+            id = rand.nextInt((100000 - 1000) + 1) + 1000;
             ticketList = fillTickets();
+
             event = new Event(id, x, y,dist, ticketList);
             list.add(event);
 
         }
+        System.out.println(list.size());
         System.out.println(Arrays.toString(list.toArray()));
+
+        return list;
     }
 
     //Method returns an array of random double numbers.
