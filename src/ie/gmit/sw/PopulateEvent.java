@@ -1,40 +1,39 @@
 package ie.gmit.sw;
 //import ie.gmit.sw.Event;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 /**
  * Created by Sean on 20/05/2017.
  */
-public class PopulateEvent  {
+public class PopulateEvent implements Randomizeable {
+
     Random rand = new Random();
     private Event event;
+    ArrayList<Double> ticketList = new ArrayList<Double>();
     private EventList list;
-
+    
     public PopulateEvent(){
         super();
     }
 
     //Generate random seed data for 20 event
+    @Override
     public void RandomEvent(){
         list = new EventList();
         int id, x, y;
-
-        int min = 100;
-        int max = 1000;
-        int randValue = 0;
-
         id = x = y = 0;
+
         double dist = 0.0;
-        double [] tickets = new double[0];
 
         for (int i = 0; i < 20; i ++){
             x = rand.nextInt(20) + 0;
             y = rand.nextInt(20) + 0;
-            id = rand.nextInt((1000 - 100) + 1) + 100;//randValue = min + (max - min) * rand.nextInt();
-            tickets = fillTickets();
-            event = new Event(id, x, y,dist, tickets);
+            id = rand.nextInt((100000 - 1000) + 1) + 1000;//randValue = min + (max - min) * rand.nextInt();
+            ticketList = fillTickets();
+            event = new Event(id, x, y,dist, ticketList);
             list.add(event);
 
         }
@@ -42,14 +41,14 @@ public class PopulateEvent  {
     }
 
     //Method returns an array of random double numbers.
-    public double[] fillTickets(){
-        double [] tickets = new double[20];
-        double min = 5.0;
-        double max = 250.00;
-        double randomValue = 0.0;
+    @Override
+    public ArrayList<Double> fillTickets(){
+       ArrayList<Double> tickets = new ArrayList<>();
+        Double randomValue = 0.0;
 
-        for(int i =0; i < tickets.length; i++){
-            tickets[i] = randomValue = min + (max - min) * rand.nextDouble();
+        for(int i =0; i < rand.nextInt(20) + 0; i++){
+            randomValue = 5.0 + (250.00 - 5.0) * rand.nextDouble();
+            tickets.add(randomValue);
         }
         return tickets;
     }

@@ -1,6 +1,6 @@
 package ie.gmit.sw;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Created by Sean on 20/05/2017.
@@ -11,17 +11,18 @@ public class Event {
     private int x;
     private int y;
     private double distance;
-    private double [] tickets ;
+    private ArrayList<Double> list;
 
     public Event(){
 
     }
-    public Event(int id, int x, int y, double distance, double [] tickets){
+    public Event(int id, int x, int y, double distance, ArrayList<Double> list ){
         this.id = id;
         this.x = x;
         this.y = y;
         this.distance = distance;
-        this.tickets = tickets;
+        this.list = list;
+
     }
     public int getId() {
         return id;
@@ -54,13 +55,14 @@ public class Event {
         this.distance = distane;
     }
 
-    public double[] getTickets() {
-        return tickets;
+    public ArrayList<Double> getList() {
+        return list;
     }
 
-    public void setTickets(double[] tickets) {
-        this.tickets = tickets;
+    public void setList(ArrayList<Double> list) {
+        this.list = list;
     }
+
 
     @Override
     public String toString() {
@@ -69,7 +71,7 @@ public class Event {
                 ", x=" + x +
                 ", y=" + y +
                 ", distance=" + distance +
-                ", tickets=" + Arrays.toString(tickets) +
+                ", list=" + list +
                 '}';
     }
 }
