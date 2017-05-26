@@ -12,8 +12,9 @@ public class PopulateEvent implements Randomizeable {
 
     Random rand = new Random();
     private Event event;
+    ArrayList<Event> list = new ArrayList<>();
     ArrayList<Double> ticketList = new ArrayList<Double>();
-    private EventList list;
+    //private EventList list;
 
     public PopulateEvent(){
         super();
@@ -21,8 +22,8 @@ public class PopulateEvent implements Randomizeable {
 
     //Generate random seed data for 20 event
     @Override
-    public EventList RandomEvent(){
-        list = new EventList();
+    public ArrayList<Event> RandomEvent(){
+        //list = new EventList();
         int id, x, y;
         id = x = y = 0;
         int dist = 0;
@@ -40,6 +41,7 @@ public class PopulateEvent implements Randomizeable {
         }
         System.out.println(list.size());
         System.out.println(Arrays.toString(list.toArray()));
+
 
         return list;
     }
