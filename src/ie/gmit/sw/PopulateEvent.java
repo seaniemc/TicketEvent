@@ -45,7 +45,7 @@ public class PopulateEvent implements Randomizeable {
 
         return list;
     }
-
+    //eeeee
     //Method returns an array of random double numbers.
     @Override
     public ArrayList<Double> fillTickets(){
