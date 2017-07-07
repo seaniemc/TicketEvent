@@ -14,44 +14,46 @@ public class Organiser {
     //private EventList list;
 
     public Organiser(ArrayList<Event> list, int x, int y){
+
         CalculateManhatton(list,x,  y);
     }
 
-    public ArrayList<Event> CalculateManhatton(ArrayList<Event> list,int x, int y){
+
+    public void CalculateManhatton(ArrayList<Event> list,int x, int y){
         event = new Event();
         //list = new EventList();
 
-        for(int i =0; i < list.size(); i++){
-            event = list.get(i);
+        for (Event aList : list) {
+            event = aList;
 
-            event.setDistane( Math.abs(event.getX()-x) + Math.abs(event.getY()-y));
+            event.setDistane(Math.abs(event.getX() - x) + Math.abs(event.getY() - y));
 
         }
 
-        list = sortList(list);
+        sortList(list);
 
-        System.out.println(Arrays.toString(list.toArray()));
-        return list;
+       // System.out.println(Arrays.toString(list.toArray()));
+        //return list;
     }
 
-    public ArrayList<Event> sortList(ArrayList<Event> list){
+    public List<Event> sortList(ArrayList<Event> list){
 
         List<Event> unique = list.stream()
                 .collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingInt(Event::getX))),
                         ArrayList::new));
+        List<Event> list1 = unique;
 
-        List<Event> unique1 = list.stream()
+        List<Event> unique1 = list1.stream()
                 .collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingInt(Event::getY))),
                         ArrayList::new));
 
-        System.out.println(list.size());
+        System.out.println(unique1.size());
 
-//        Collections.sort(list, new Comparator<Event>() {
-//            public int compare(Event one, Event other) {
-//                return one.getDistane().compareTo(other.getDistane());
-//            }
-//        });
-        return list;
+
+        unique1.sort(Comparator.comparingInt(Event::getDistane));
+        System.out.println(Arrays.toString(unique1.toArray()));
+        
+        return unique1;
     }
 
 

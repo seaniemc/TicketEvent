@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Event {
 
+
     private int id;
     private int x;
     private int y;

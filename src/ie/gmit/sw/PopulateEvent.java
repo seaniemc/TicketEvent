@@ -39,8 +39,8 @@ public class PopulateEvent implements Randomizeable {
             list.add(event);
 
         }
-        System.out.println(list.size());
-        System.out.println(Arrays.toString(list.toArray()));
+        //System.out.println(list.size());
+        //System.out.println(Arrays.toString(list.toArray()));
 
 
         return list;
