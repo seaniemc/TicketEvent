@@ -11,9 +11,9 @@ public class EventRunner {
 
 
     public static void main(String[] args) {
-        //EventList eventList = new EventList();
-        int[] intArray = new int[2];
-        ArrayList <Event> list = new ArrayList<Event>();
+
+        int[] intArray;
+        ArrayList <Event> list;
         PopulateEvent event = new PopulateEvent();
 
         list = event.RandomEvent();
@@ -21,7 +21,6 @@ public class EventRunner {
         intArray = usrInput();
 
         intArray = validInput(intArray[0], intArray[1]);
-
 
         Organiser org = new Organiser(list, intArray[0], intArray[1]);
 
@@ -66,7 +65,6 @@ public class EventRunner {
             usrInput();
 
         }
-
         return intArray;
     }
 

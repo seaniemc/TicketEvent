@@ -1,6 +1,7 @@
 package ie.gmit.sw;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.collectingAndThen;
@@ -51,11 +52,21 @@ public class Organiser {
 
 
         unique1.sort(Comparator.comparingInt(Event::getDistane));
+        unique1 = sortPrice(unique1);
 
         System.out.println(Arrays.toString(unique1.toArray())+ '\n');
 
         return unique1;
     }
 
+    public List<Event> sortPrice(List<Event> list){
 
+       //list = new ArrayList<>();
+
+        for(Event even: list){
+            Collections.sort(even.getList());
+        }
+        //System.out.println(Arrays.toString(list.toArray())+ '\n');
+        return list;
+    }
 }
