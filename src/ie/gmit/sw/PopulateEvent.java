@@ -4,6 +4,7 @@ package ie.gmit.sw;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * Created by Sean on 20/05/2017.
@@ -17,6 +18,7 @@ public class PopulateEvent implements Randomizeable {
     //private EventList list;
 
     public PopulateEvent(){
+
         super();
     }
 
@@ -24,15 +26,17 @@ public class PopulateEvent implements Randomizeable {
     @Override
     public ArrayList<Event> RandomEvent(){
         //list = new EventList();
-        int id, x, y;
-        id = x = y = 0;
+        int x, y;
+        x = y = 0;
+        String id;
         int dist = 0;
 
-        for (int i = 0; i < 20; i ++){
+        for (int i = 0; i < 40; i ++){
 
             x = rand.nextInt(20) + 0;
             y = rand.nextInt(20) + 0;
-            id = rand.nextInt((100000 - 1000) + 1) + 1000;
+           // id = rand.nextInt((100000 - 1000) + 1) + 1000;
+            id = UUID.randomUUID().toString();
             ticketList = fillTickets();
 
             event = new Event(id, x, y,dist, ticketList);

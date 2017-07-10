@@ -51,8 +51,9 @@ public class Organiser {
 
 
         unique1.sort(Comparator.comparingInt(Event::getDistane));
-        System.out.println(Arrays.toString(unique1.toArray()));
-        
+
+        System.out.println(Arrays.toString(unique1.toArray())+ '\n');
+
         return unique1;
     }
 

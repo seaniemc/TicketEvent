@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Event {
 
 
-    private int id;
+    private String id;
     private int x;
     private int y;
     private int distance;
@@ -17,7 +17,7 @@ public class Event {
     public Event(){
 
     }
-    public Event(int id, int x, int y, int distance, ArrayList<Double> list ){
+    public Event(String id, int x, int y, int distance, ArrayList<Double> list ){
         this.id = id;
         this.x = x;
         this.y = y;
@@ -25,11 +25,11 @@ public class Event {
         this.list = list;
 
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public int getX() {
