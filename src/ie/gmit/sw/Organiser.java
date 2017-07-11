@@ -12,7 +12,8 @@ import static java.util.stream.Collectors.toCollection;
  */
 public class Organiser {
     private Event event;
-    //private EventList list;
+
+   // private
 
     public Organiser(ArrayList<Event> list, int x, int y){
 
@@ -53,6 +54,7 @@ public class Organiser {
 
         unique1.sort(Comparator.comparingInt(Event::getDistane));
         unique1 = sortPrice(unique1);
+        unique1 = return5(unique1);
 
         System.out.println(Arrays.toString(unique1.toArray())+ '\n');
 
@@ -68,5 +70,22 @@ public class Organiser {
         }
         //System.out.println(Arrays.toString(list.toArray())+ '\n');
         return list;
+    }
+    public List<Event> return5(List<Event>list){
+
+        List<Event>resList = new ArrayList<>(list.subList(list.size() - 5, list.size()));
+       //ArrayList<Double>onePrice = new ArrayList<>();
+        int i = 0;
+        for (Event even: resList){
+            //even.getList().subList(even.getList().size()-1, even.getList().size());
+            //onePrice.add(even.getList().get(0));
+            ArrayList<Double>onePrice = new ArrayList<>(even.getList().subList(even.getList().size() -1, even.getList().size()));
+            //resList);
+            //onePrice.toString();
+            //even.getList().replaceAll(onePrice);
+
+        }
+        //for
+        return resList;
     }
 }
