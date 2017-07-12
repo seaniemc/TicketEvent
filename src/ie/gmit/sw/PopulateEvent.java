@@ -24,15 +24,13 @@ public class PopulateEvent implements Randomizeable {
     public List<Event> RandomEvent(){
         //list = new EventList();
         int x, y;
-        x = y = 0;
         String id;
         int dist = 0;
 
-        for (int i = 0; i < 40; i ++){
+        for (int i = 0; i < rand.nextInt(100000000) + 50; i ++){
 
             x = rand.nextInt(20) + 0;
             y = rand.nextInt(20) + 0;
-           // id = rand.nextInt((100000 - 1000) + 1) + 1000;
             id = UUID.randomUUID().toString();
             ticketList = fillTickets();
 
@@ -40,20 +38,17 @@ public class PopulateEvent implements Randomizeable {
             list.add(event);
 
         }
-        //System.out.println(list.size());
-        //System.out.println(Arrays.toString(list.toArray()));
-
 
         return list;
     }
-    //eeeee
-    //Method returns an array of random double numbers.
+
+    //Method returns an ArrayList of random double numbers.
     @Override
     public ArrayList<Double> fillTickets(){
        ArrayList<Double> tickets = new ArrayList<>();
-        Double randomValue = 0.0;
+        Double randomValue;
 
-        for(int i =0; i < rand.nextInt(20) + 0; i++){
+        for(int i = 0; i < rand.nextInt(20) + 1; i++){
             randomValue = 5.0 + (250.00 - 5.0) * rand.nextDouble();
             tickets.add(randomValue);
         }

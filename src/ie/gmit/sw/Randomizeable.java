@@ -8,7 +8,7 @@ import java.util.List;
  */
 public interface Randomizeable {
     //Generate random seed data for 20 event
-    public List RandomEvent();
+    List RandomEvent();
 
     //Method returns an array of random double numbers.
     List<Double> fillTickets();

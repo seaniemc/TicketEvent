@@ -14,10 +14,7 @@ import static java.util.stream.Collectors.toCollection;
 public class Organiser {
     private Event event;
 
-   // private
-
     public Organiser(List<Event> list, int x, int y){
-
         CalculateManhatton(list,x,  y);
     }
 
@@ -25,17 +22,12 @@ public class Organiser {
     //coordinates and each event
     public void CalculateManhatton(List<Event> list,int x, int y){
         event = new Event();
-        //list = new EventList();
 
         for (Event aList : list) {
             event = aList;
-
             event.setDistane(Math.abs(event.getX() - x) + Math.abs(event.getY() - y));
-
         }
-
         sortList(list);
-
     }
 
     public List<Event> sortList(List<Event> list){
@@ -57,10 +49,10 @@ public class Organiser {
         unique1.sort(Comparator.comparingInt(Event::getDistane));
         //passes the list which gets sorted by price in ascending order
         unique1 = sortPrice(unique1);
-        //creates a sublist of the 5 closest events
-        List<Event>resList = new ArrayList<>(unique1.subList(unique1.size() - 5, unique1.size()));
 
-        resList = finalTickets(resList);
+        //creates a sublist of the 5 closest events
+        List<Event>resList = new ArrayList<>(unique1.subList(0,5));
+
         //System.out.println(Arrays.toString(resList.toArray())+ '\n');
         showResult(resList);
 
@@ -74,26 +66,17 @@ public class Organiser {
         }
         return list;
     }
-    public List<Event> finalTickets(List<Event> list){
 
-        for(int i =0; i < list.size();i++){
-            //creates a sublist of
-            ArrayList<Double> onePrice = new ArrayList<Double>(list.get(i).getList().
-                    subList(list.get(i).getList().size()-1, list.get(i).getList().size()));
-            //rests the newly created sublist (oneprice) as the new list.
-            list.get(i).setList(onePrice);
-        }
-
-        return list;
-    }
 
     public void showResult(List<Event>list){
         double amount = 0.00;
         Locale locale = new Locale("en", "US");
         NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
+
         System.out.println("=======List of the five closest events with Lowest price for each event========");
         System.out.println("");
         System.out.printf("%-40s %-10s %-10s %-10s %-10s\n", "ID", "X", "Y", "Dist", "Price");
+
         for (Event eve: list){
             amount = eve.getList().get(0);
             System.out.printf("%-40s %-10s %-10s %-10s %-10s\n", eve.getId(), eve.getX(), eve.getY(), eve.getDistane(), currencyFormatter.format(amount));
