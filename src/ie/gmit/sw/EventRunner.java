@@ -2,6 +2,7 @@ package ie.gmit.sw;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ public class EventRunner {
     public static void main(String[] args) {
 
         int[] intArray;
-        ArrayList <Event> list;
+        List<Event> list;
         PopulateEvent event = new PopulateEvent();
 
         list = event.RandomEvent();

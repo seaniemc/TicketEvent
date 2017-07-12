@@ -1,10 +1,7 @@
 package ie.gmit.sw;
 //import ie.gmit.sw.Event;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by Sean on 20/05/2017.
@@ -13,7 +10,7 @@ public class PopulateEvent implements Randomizeable {
 
     Random rand = new Random();
     private Event event;
-    ArrayList<Event> list = new ArrayList<>();
+    List<Event> list = new ArrayList<>();
     ArrayList<Double> ticketList = new ArrayList<Double>();
     //private EventList list;
 
@@ -24,7 +21,7 @@ public class PopulateEvent implements Randomizeable {
 
     //Generate random seed data for 20 event
     @Override
-    public ArrayList<Event> RandomEvent(){
+    public List<Event> RandomEvent(){
         //list = new EventList();
         int x, y;
         x = y = 0;
