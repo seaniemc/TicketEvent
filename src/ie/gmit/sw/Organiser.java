@@ -34,13 +34,16 @@ public class Organiser {
 
         //removes any duplicates for any event at each X coordinate
         List<Event> unique = list.stream()
-                .collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingInt(Event::getX))),
+                .collect(collectingAndThen(toCollection(() ->
+                                new TreeSet<>(comparingInt(Event::getX))),
                         ArrayList::new));
+
         List<Event> list1 = unique;
 
         //removes any duplicates for any event at each Y coordinate
         List<Event> unique1 = list1.stream()
-                .collect(collectingAndThen(toCollection(() -> new TreeSet<>(comparingInt(Event::getY))),
+                .collect(collectingAndThen(toCollection(()
+                                -> new TreeSet<>(comparingInt(Event::getY))),
                         ArrayList::new));
 
         System.out.println(unique1.size());
