@@ -13,18 +13,40 @@ public class EventRunner {
 
     public static void main(String[] args) {
 
-        int[] intArray;
+
         List<Event> list;
         PopulateEvent event = new PopulateEvent();
-
         list = event.RandomEvent();
+        int userInput = 0;
 
-        intArray = usrInput();
+       do{
+            System.out.println("Please enter.....");
+            System.out.println("1 to exit program");
+            System.out.println("2 to retive tickets based on X and Y");
+            Scanner scan = new Scanner(System.in);
+            userInput = scan.nextInt();
+            switch (userInput){
+                case 1:
+
+                    System.out.println("THANK YOU AND GOOD BYE");
+
+                    break;
+
+                case 2:
+
+                    runTicketSearch(list);
+            }
+
+        } while(userInput != 1);
+
+
+    }
+    public static void runTicketSearch(List<Event> list){
+        int[] intArray = usrInput();
 
         intArray = validInput(intArray[0], intArray[1]);
 
         Organiser org = new Organiser(list, intArray[0], intArray[1]);
-
     }
     public static int [] usrInput (){
         int[] intArray = new int[2];
